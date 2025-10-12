@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             <div className="footer__bottom-bar">
                 <div className="max-w-6xl mx-auto">
                     <div className="footer__copyright">
-                        <p>&copy; {currentYear} Detalles Corporativos. Todos los derechos reservados</p>
+                        <p>&copy; {currentYear} Detalles Corporativos. Todos los derechos reservados.</p>
                         <p>Una marca de Asocia Tech SAS</p>
                     </div>
                 </div>
