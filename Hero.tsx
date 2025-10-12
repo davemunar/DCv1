@@ -1,0 +1,97 @@
+import React, { useState, useEffect } from 'react';
+
+const slides = [
+    {
+        mobile: '/imagenes/imgHero/imgH1.png',
+        desktop: '/imagenes/imgHero/imgH1full.png',
+        title: 'Kits Empresariales',
+        subtitle: 'Encuentra el detalle perfecto de reconocimiento para tus colaboradores y clientes VIP.',
+        alt: 'Personas en una reunión de negocios'
+    },
+    {
+        mobile: '/imagenes/imgHero/imgH2small.png', // Placeholder, replace with your image
+        desktop: '/imagenes/imgHero/imgH2full.png', // Placeholder, replace with your image
+        title: 'Anchetas Gourmet',
+        subtitle: 'En esta navidad regala productos que reflejen la excelencia de tu marca.',
+        alt: 'Productos de alta calidad en exhibición'
+    },
+    {
+        mobile: '/imagenes/imgHero/smallHero3.png', // Placeholder, replace with your image
+        desktop: '/imagenes/imgHero/imgHero3v2.png', // Placeholder, replace with your image
+        title: 'Personalización de impacto!',
+        subtitle: 'Adaptamos cada detalle a la identidad de tu empresa.',
+        alt: 'Proceso de personalización de un regalo'
+    }
+];
+
+const Hero: React.FC = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [userInteracted, setUserInteracted] = useState(false);
+
+    useEffect(() => {
+        if (!userInteracted) {
+            const slideInterval = setInterval(() => {
+                const isLastSlide = currentIndex === slides.length - 1;
+                const newIndex = isLastSlide ? 0 : currentIndex + 1;
+                setCurrentIndex(newIndex);
+            }, 6000); // Change slide every 6 seconds
+
+            return () => clearInterval(slideInterval); // Clean up the interval on component unmount
+        }
+    }, [currentIndex, userInteracted]);
+
+    const goToPrevious = () => {
+        setUserInteracted(true);
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex);
+    };
+
+    const goToNext = () => {
+        setUserInteracted(true);
+        const isLastSlide = currentIndex === slides.length - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
+    };
+
+    const goToSlide = (slideIndex: number) => {
+        setUserInteracted(true);
+        setCurrentIndex(slideIndex);
+    };
+
+    return (
+        <section className="hero-carousel">
+            <div className="hero-carousel__slides-container" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                {slides.map((slide, index) => (
+                    <div className="hero-carousel__slide" key={index}>
+                        <div className="hero__background">
+                            <picture>
+                                <source media="(min-width: 768px)" srcSet={slide.desktop} />
+                                <img src={slide.mobile} alt={slide.alt} className="hero__background-image" />
+                            </picture>
+                        </div>
+                        <div className="hero__content">
+                            <h1 className="hero__title">{slide.title}</h1>
+                            <p className="hero__subtitle">{slide.subtitle}</p>
+                            <a href="#" className="cta-button">Ver Catálogo</a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div className="hero-carousel__controls">
+                <div className="hero-carousel__arrow-group">
+                    <div className="hero-carousel__arrow hero-carousel__arrow--left" onClick={goToPrevious}>&#10094;</div>
+                    <div className="hero-carousel__arrow hero-carousel__arrow--right" onClick={goToNext}>&#10095;</div>
+                </div>
+                <div className="hero-carousel__dots">
+                    {slides.map((_, slideIndex) => (
+                        <div key={slideIndex} className={`hero-carousel__dot ${currentIndex === slideIndex ? 'active' : ''}`} onClick={() => goToSlide(slideIndex)}></div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Hero;
