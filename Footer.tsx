@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
                     <h4 className="footer__heading">Información</h4>
                     <ul className="footer__links">
                         <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="/politicas">Políticas de entregas y devoluciones</a></li>
+                        <li><a href="/politicas">Políticas de Entrega</a></li>
                     </ul>
                 </div>
                 <div className="footer__column">

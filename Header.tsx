@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-// Base64 encoded logo
-const logoSrc = "/imagenes/DCiso.png";
+import logoSrc from './src/assets/imagenes/DCiso.png';
+
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -10,10 +10,10 @@ const Header: React.FC = () => {
     };
 
     const navLinks = [
-        { name: 'Kits', href: '#' },
-        { name: 'Anchetas', href: '#' },
-        { name: 'Personalizados', href: '#' },
-        { name: 'Contacto', href: '#' },
+        { name: 'Kits', href: '/product/kits-empresariales' },
+        { name: 'Anchetas', href: '/product/anchetas-gourmet' },
+        { name: 'Personalizados', href: '/product/productos-personalizados' },
+        { name: 'Contacto', href: '/contact' },
     ];
 
     return (

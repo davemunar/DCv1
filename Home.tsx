@@ -2,6 +2,10 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import Hero from './Hero';
 import Testimonials from './Testimonials';
+import kitsImage from './src/assets/imagenes/imgProductos/imgKitsPortada1.png';
+import anchetasImage from './src/assets/imagenes/imgProductos/imgAnchetasPortada1.png';
+import personalizadosImage from './src/assets/imagenes/imgProductos/imgPersonalizadosPortada1.png';
+import bannerImage from './src/assets/imagenes/imgBanner.png';
 // import Marquee from './Marquee'; // Ya no es necesario aquí
 
 function Home() {
@@ -10,21 +14,21 @@ function Home() {
         {
             name: 'Kits Empresariales',
             description: 'Personaliza el impacto. Elige entre tecnología, bienestar o productividad.',
-            imageUrl: './imagenes/imgProductos/imgKitsPortada1.png',
+            imageUrl: kitsImage,
             slug: 'kits-empresariales' // Añadido
         },
 
         {
             name: 'Anchetas Gourmet',
             description: 'Una selección de productos premium para el paladar más exigente.',
-            imageUrl: './imagenes/imgProductos/imgAnchetasPortada1.png',
+            imageUrl: anchetasImage,
             slug: 'anchetas-gourmet' // Añadido
         },
 
         {
             name: 'Productos personalizados',
             description: 'Gadgets de última generación para sorprender a tus clientes.',
-            imageUrl: './imagenes/imgProductos/imgPersonalizadosPortada1.png',
+            imageUrl: personalizadosImage,
             slug: 'productos-personalizados' // Añadido
         }
     ];
@@ -47,7 +51,7 @@ function Home() {
             <section className="promotional-section bg-gray-50 py-12 mt-12">
                 <div className="promotional-section__container flex flex-col md:flex-row items-center max-w-6xl mx-auto p-4">
                     <div className="promotional-section__image-container md:w-1/2 p-4">
-                        <img src="/imagenes/imgBanner.png" alt="Regalos corporativos personalizados" className="promotional-section__image w-full h-auto rounded-lg shadow-md" />
+                        <img src={bannerImage} alt="Regalos corporativos personalizados" className="promotional-section__image w-full h-auto rounded-lg shadow-md" />
                     </div>
                     <div className="promotional-section__content md:w-1/2 p-4">
                         <h2 className="promotional-section__title text-3xl font-semibold mb-4 text-gray-800">Déjalos elegir y haz que tu regalo sea el detalle corporativo perfecto:</h2>

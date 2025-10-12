@@ -3,14 +3,20 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
-import Marquee from './Marquee';
-import Pillars from './Pillars.tsx'; // Importamos el componente de los pilares
-import Cta from './Cta.tsx'; // Importamos el nuevo componente CTA
-import WhatsAppButton from './WhatsAppButton.tsx'; // Importamos el botón de WhatsApp
+import Marquee from './Marquee'; // Ya no es necesario aquí
+import Pillars from './Pillars'; // Importamos el componente de los pilares
+import Cta from './Cta'; // Importamos el nuevo componente CTA
+import WhatsAppButton from './WhatsAppButton'; // Importamos el botón de WhatsApp
 import Home from './Home';
 // Nuevos componentes necesarios
 import ProductCatalog from './ProductCatalog'; 
 import ProductDetails from './ProductDetails'; 
+
+// Placeholder components for new routes
+const Contact = () => <div className="py-8"><h1 className="text-3xl font-bold">Página de Contacto</h1><p>Información de contacto aquí.</p></div>;
+const About = () => <div className="py-8"><h1 className="text-3xl font-bold">Sobre Nosotros</h1><p>Información sobre la empresa aquí.</p></div>;
+const Policies = () => <div className="py-8"><h1 className="text-3xl font-bold">Políticas</h1><p>Políticas de entregas y devoluciones aquí.</p></div>;
+
 
 const App: React.FC = () => {
   const [isMarqueeVisible, setMarqueeVisible] = useState(true);
@@ -48,6 +54,11 @@ const App: React.FC = () => {
           
           {/* Ruta para ver los detalles de un producto específico */}
           <Route path="/product/:slug" element={<ProductDetails />} />
+
+          {/* Nuevas rutas */}
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/sobre-nosotros" element={<About />} />
+          <Route path="/politicas" element={<Policies />} />
         </Routes>
       </main>
       <Cta /> {/* Añadimos la sección de CTA aquí */}

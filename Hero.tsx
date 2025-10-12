@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
+import imgH1 from './src/assets/imagenes/imgHero/imgH1.png';
+import imgH1full from './src/assets/imagenes/imgHero/imgH1full.png';
+import imgH2small from './src/assets/imagenes/imgHero/imgH2small.png';
+import imgH2full from './src/assets/imagenes/imgHero/imgH2full.png';
+import smallHero3 from './src/assets/imagenes/imgHero/smallHero3.png';
+import imgHero3v2 from './src/assets/imagenes/imgHero/imgHero3v2.png';
+
 const slides = [
     {
-        mobile: '/imagenes/imgHero/imgH1.png',
-        desktop: '/imagenes/imgHero/imgH1full.png',
+        mobile: imgH1,
+        desktop: imgH1full,
         title: 'Kits Empresariales',
         subtitle: 'Encuentra el detalle perfecto de reconocimiento para tus colaboradores y clientes VIP.',
         alt: 'Personas en una reunión de negocios'
     },
     {
-        mobile: '/imagenes/imgHero/imgH2small.png', // Placeholder, replace with your image
-        desktop: '/imagenes/imgHero/imgH2full.png', // Placeholder, replace with your image
+        mobile: imgH2small,
+        desktop: imgH2full,
         title: 'Anchetas Gourmet',
         subtitle: 'En esta navidad regala productos que reflejen la excelencia de tu marca.',
         alt: 'Productos de alta calidad en exhibición'
     },
     {
-        mobile: '/imagenes/imgHero/smallHero3.png', // Placeholder, replace with your image
-        desktop: '/imagenes/imgHero/imgHero3v2.png', // Placeholder, replace with your image
+        mobile: smallHero3,
+        desktop: imgHero3v2,
         title: 'Personalización de impacto!',
         subtitle: 'Adaptamos cada detalle a la identidad de tu empresa.',
         alt: 'Proceso de personalización de un regalo'
@@ -73,7 +80,7 @@ const Hero: React.FC = () => {
                         <div className="hero__content">
                             <h1 className="hero__title">{slide.title}</h1>
                             <p className="hero__subtitle">{slide.subtitle}</p>
-                            <a href="#" className="cta-button">Ver Catálogo</a>
+                            <a href="/products" className="cta-button">Ver Catálogo</a>
                         </div>
                     </div>
                 ))}
