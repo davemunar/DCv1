@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Marquee from './Marquee';
+import Pillars from './Pillars.tsx'; // Importamos el componente de los pilares
+import Cta from './Cta.tsx'; // Importamos el nuevo componente CTA
+import WhatsAppButton from './WhatsAppButton.tsx'; // Importamos el botón de WhatsApp
 import Home from './Home';
 // Nuevos componentes necesarios
 import ProductCatalog from './ProductCatalog'; 
@@ -47,7 +50,10 @@ const App: React.FC = () => {
           <Route path="/product/:slug" element={<ProductDetails />} />
         </Routes>
       </main>
+      <Cta /> {/* Añadimos la sección de CTA aquí */}
+      <Pillars /> {/* Añadimos la sección de pilares aquí */}
       <Footer />
+      <WhatsAppButton /> {/* Añadimos el botón flotante de WhatsApp */}
     </Router>
   );
 };

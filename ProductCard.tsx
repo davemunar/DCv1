@@ -25,9 +25,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, description, imageUrl, 
                     <p className="product-card__description text-gray-600">
                         {description}
                     </p>
-                    <button className="mt-4 text-blue-500 hover:text-blue-700 font-medium">
-                        Ver Detalles →
-                    </button>
+                    {/* Contenedor para centrar el botón */}
+                    <div className="text-center mt-4">
+                        <div className="cta-button inline-block text-sm">
+                            Ver todas las Opciones
+                        </div>
+                    </div>
                 </div>
             </div>
         </Link>

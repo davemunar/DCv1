@@ -10,7 +10,7 @@ const Marquee: React.FC<MarqueeProps> = ({ className = '' }) => {
     return (
         <div className={`marquee-section ${className}`}>
             {/* Mensaje temporal de Marquee */}
-            ¡🎄 Adelántate a la Navidad! 35% OFF 💰 en tus pedidos anticipados 🎁.
+            ¡🎄 Adelántate a la Navidad! 35% OFF💰 en tus pedidos🎁.
         </div>
     );
 };

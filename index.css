@@ -162,15 +162,17 @@ main {
 
 .marquee-section__container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap; /* Permitimos que los elementos se envuelvan */
+    justify-content: space-between; /* Distribuimos el espacio */
     gap: 0.75rem;
 }
 
 .marquee-section__item {
     display: flex;
     align-items: center;
+    flex-basis: calc(50% - 0.5rem); /* Cada pilar ocupa casi el 50% del ancho */
     gap: 0.5rem;
+    justify-content: center; /* Centramos el contenido del pilar */
 }
 
 .marquee-section__icon {
@@ -181,14 +183,91 @@ main {
 
 .marquee-section__text {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Reducimos un poco más el texto para que quepa bien */
 }
 
 @media (min-width: 768px) {
     .marquee-section__container {
-        flex-direction: row;
         justify-content: space-around;
     }
+    .marquee-section__item {
+        flex-basis: auto; /* En escritorio, el ancho es automático */
+    }
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--background-light);
+    padding: 1.5rem 5%;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.cta-section__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta-section__button {
+    background-color: #25D366; /* Verde similar a WhatsApp */
+    color: white;
+    padding: 0.75rem 2.5rem;
+    border-radius: 50px; /* Bordes redondeados */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-section__button:hover {
+    background-color: #1EBE57;
+    transform: scale(1.05);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366; /* WhatsApp Green */
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem; /* Icon size */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #FF3B30; /* Rojo brillante */
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
 }
 
 /* Home Page */
@@ -321,11 +400,12 @@ main {
   background-color: var(--accent-color);
   color: var(--primary-color);
   border: none;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.5rem; /* Reducido el padding horizontal */
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
+  text-align: center; /* Asegura que el texto dentro del botón esté centrado */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -363,6 +443,7 @@ main {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Highlighted by default for mobile */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     text-align: left;
+    text-decoration: none; /* Elimina el subrayado del enlace */
 }
 
 .product-card:hover {
@@ -564,6 +645,7 @@ main {
     gap: 1rem;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
 }
 
 .testimonial-card__initials-icon {
@@ -693,5 +775,26 @@ main {
     .promotional-section__cta-container {
         margin-top: auto; /* Pushes button to the bottom */
         padding-top: 2rem; /* Ensures space from text above */
+    }
+}
+
+@media (min-width: 768px) {
+    .cta-section__container {
+        flex-direction: row;
+        justify-content: center; /* Centra los elementos en escritorio */
+        gap: 1.5rem;
+    }
+    .cta-section__text {
+        font-size: 2.2rem; /* Reducido para que no sea tan grande */
+        font-weight: 600; /* Semibold para que destaque */
+        color: var(--text-dark);
+    }
+}
+
+@media (min-width: 768px) {
+    .cta-section__container {
+        flex-direction: row;
+        justify-content: center; /* Centra los elementos en escritorio */
+        gap: 1.5rem;
     }
 }

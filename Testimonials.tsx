@@ -3,38 +3,38 @@ import React, { useState, useEffect } from 'react';
 const testimonials = [
     {
         id: 1,
-        name: 'Laura Gómez',
-        role: 'Gerente de RRHH, Tech Solutions',
+        name: 'Laura Gómez ',
+        role: '  Gerente de RRHH, Tech Solutions',
         message: '¡La plataforma es increíblemente fácil de usar! Nuestros empleados se sintieron valorados y el proceso de elección del regalo fue un éxito total. ¡Un acierto para nuestro programa de bienestar!',
     },
     {
         id: 2,
-        name: 'Carlos Mendoza',
-        role: 'Jefe de Personal, Innova Corp',
+        name: 'Carlos Mendoza  ',
+        role: '  Jefe de Personal, Innova Corp',
         message: 'Buscábamos una forma de reconocer a nuestro equipo que fuera más allá de lo tradicional. Detalles Corporativos nos dio la flexibilidad que necesitábamos. La logística fue impecable.',
     },
     {
         id: 3,
-        name: 'Sofía Ramírez',
-        role: 'Coordinadora de Bienestar, Grupo Creativo',
+        name: 'Sofía Ramírez  ',
+        role: '  Coordinadora de Bienestar, Grupo Creativo',
         message: 'El feedback de los colaboradores fue excelente. Les encantó poder elegir su propio regalo. Definitivamente eleva la moral del equipo y fortalece nuestra cultura empresarial.',
     },
     {
         id: 4,
-        name: 'Martín Torres',
-        role: 'Director de Talento Humano, GlobalNet',
+        name: 'Martín Torres  ',
+        role: '  Director de Talento Humano, GlobalNet',
         message: 'La gestión de regalos corporativos solía ser un dolor de cabeza. Ahora, con esta solución, el proceso es ágil y nuestros empleados se sienten realmente especiales. ¡Totalmente recomendado!',
     },
     {
         id: 5,
-        name: 'Isabella Rojas',
-        role: 'Especialista en Clima Organizacional, Creativos Unidos',
+        name: 'Isabella Rojas  ',
+        role: '  Especialista en Clima Organizacional, Creativos Unidos',
         message: 'Poder ofrecer una selección curada de regalos y que cada persona elija su favorito ha tenido un impacto muy positivo en la moral del equipo. La logística es transparente y sin complicaciones.',
     },
     {
         id: 6,
-        name: 'Javier Núñez',
-        role: 'Gerente de Compensaciones, LogiTech',
+        name: 'Javier Núñez  ',
+        role: '  Gerente de Compensaciones, LogiTech',
         message: 'Desde que implementamos esta plataforma, el feedback ha sido unánime: es la mejor iniciativa de reconocimiento que hemos tenido. La calidad de los detalles y la experiencia de entrega son de primer nivel.',
     },
 ];
@@ -93,7 +93,8 @@ const Testimonials: React.FC = () => {
                                 {getInitials(testimonial.name)}
                             </div>
                             <div className="testimonial-card__author-details">
-                                <span className="testimonial-card__name">{testimonial.name}</span>
+                                <span className="testimonial-card__name">{testimonial.name}</span> 
+                                <span className="mx-2 text-gray-400">|</span>
                                 <span className="testimonial-card__role">{testimonial.role}</span>
                             </div>
                         </div>
