@@ -2,9 +2,9 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import Hero from './Hero';
 import Testimonials from './Testimonials';
-// import Marquee from './Marquee'; // COMENTADO
+// import Marquee from './Marquee'; // Ya no es necesario aquí
 
-const Home: React.FC = () => {
+function Home() {
 
     const featuredProducts = [
         {
@@ -31,12 +31,12 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            {/* <Marquee /> // COMENTADO */}
+            {/* El Marquee ahora se renderiza en App.tsx */}
             <Hero />
 
-            <section className="featured-products py-12"> 
+            <section className="featured-products py-12">
                 <h2 className="featured-products__title text-3xl font-bold text-center mb-8">Regalos de Navidad y fin de año</h2>
-                <div className="featured-products__grid grid md:grid-cols-3 gap-6 max-w-6xl mx-auto"> 
+                <div className="featured-products__grid grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {featuredProducts.map((product, index) => (
                         // Asegúrate de que ProductCard ahora recibe el slug
                         <ProductCard key={index} {...product} />
@@ -64,6 +64,6 @@ const Home: React.FC = () => {
             <Testimonials />
         </div>
     );
-};
+}
 
 export default Home;

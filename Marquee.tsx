@@ -1,12 +1,16 @@
 import React from 'react';
 
-const Marquee: React.FC = () => {
+interface MarqueeProps {
+  className?: string;
+}
+
+const Marquee: React.FC<MarqueeProps> = ({ className = '' }) => {
     // Si no tienes contenido aún, simplemente devuelve un fragmento vacío o null.
     // Esto asegura que el componente se renderice correctamente sin romper la aplicación.
     return (
-        <div className="py-2 bg-blue-100 text-center text-sm text-blue-800">
+        <div className={`marquee-section ${className}`}>
             {/* Mensaje temporal de Marquee */}
-            ¡Atención: Diseños exclusivos para regalos de fin de año! Solicita tu cotización ahora.
+            ¡🎄 Adelántate a la Navidad! 35% OFF 💰 en tus pedidos anticipados 🎁.
         </div>
     );
 };
