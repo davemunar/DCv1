@@ -462,15 +462,18 @@ main {
 }
 
 .product-card__name {
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Aumentado un 10% */
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
+    text-align: center; /* Centrado */
 }
 
 .product-card__description {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 1.1rem; /* Ajustado para mejor legibilidad */
+    color: var(--text-dark); /* Usando el color de texto principal para mejor contraste */
+    line-height: 1.5; /* Mejorando el espaciado entre líneas */
+    font-weight: 500; /* Semibold */
 }
 
 /* Promotional Section */

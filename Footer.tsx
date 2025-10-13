@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <footer className="footer">
             <div className="footer__main-content max-w-6xl mx-auto">
                 <div className="footer__column">
-                    <h4 className="footer__heading">Catalogo</h4>
+                    <h4 className="footer__heading">Catálogo</h4>
                     <ul className="footer__links">
                         <li><Link to="/product/kits-empresariales">Kits Empresariales</Link></li>
                         <li><Link to="/product/anchetas-gourmet">Anchetas Gourmet</Link></li>

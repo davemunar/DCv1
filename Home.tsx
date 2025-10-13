@@ -13,7 +13,7 @@ function Home() {
     const featuredProducts = [
         {
             name: 'Kits Empresariales',
-            description: 'Personaliza el impacto. Elige entre tecnología, bienestar o productividad.',
+            description: 'Elige por por precio, intereses o temáticas.',
             imageUrl: kitsImage,
             slug: 'kits-empresariales' // Añadido
         },
@@ -56,7 +56,7 @@ function Home() {
                     <div className="promotional-section__content md:w-1/2 p-4">
                         <h2 className="promotional-section__title text-3xl font-semibold mb-4 text-gray-800">Déjalos elegir y haz que tu regalo sea el detalle corporativo perfecto:</h2>
                         <p className="promotional-section__body text-gray-600 mb-6">
-                            Envía una colección personalizada <strong>(por presupuesto, tema o interés)</strong> y deja que el receptor elija su detalle favorito entre 3 opciones. Solo necesitas su correo electrónico para gestionar la entrega y garantizar <strong>detalles que realmente se aprecian</strong>.
+                            Envía en e-mail con una colección personalizada <strong>(por presupuesto, tema o interés)</strong> y deja que el receptor elija su detalle favorito entre tus opciones. Solo necesitas su correo electrónico para gestionar la entrega y garantizar <strong>detalles que realmente se aprecian</strong>.
                         </p>
                         <div className="promotional-section__cta-container">
                             <a href="/contact" className="cta-button cta-button--secondary bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Descubre Cómo</a>
