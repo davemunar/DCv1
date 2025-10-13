@@ -1,12 +1,12 @@
 import React from 'react';
-import { FaGift } from 'react-icons/fa';
+import { FaTruck } from 'react-icons/fa';
 import { HiShieldCheck, HiCalculator, HiUserGroup } from 'react-icons/hi2';
 
 const pillarsData = [
-    { icon: <HiCalculator />, text: 'Cotiza Rápido', important: true },
-      { icon: <HiUserGroup />, text: 'Atención Personalizada', important: false },
-    { icon: <FaGift />, text: 'Envíos a toda Colombia', important: false },
-    { icon: <HiShieldCheck />, text: 'Entrega Garantizada', important: false },
+    { icon: <HiCalculator />, text: 'Cotiza ya!', important: true },
+      { icon: <HiUserGroup />, text: 'Asesoría', important: false },
+    { icon: <FaTruck />, text: 'A toda Colombia', important: false },
+    { icon: <HiShieldCheck />, text: 'Garantizado', important: false },
 
   
 ];
