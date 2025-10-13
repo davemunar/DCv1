@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import logoSrc from './src/assets/imagenes/DCiso.png';
 
@@ -18,18 +19,18 @@ const Header: React.FC = () => {
 
     return (
         <header className="header">
-            <a href="#" className="header__logo-link">
+            <Link to="/" className="header__logo-link">
                 <img src={logoSrc} alt="Detalles Corporativos Logo" className="header__logo" />
                 <div className="header__logotext">
                     <span className="header__logotext--details">Detalles</span>
                     <span className="header__logotext--corp">Corporativos</span>
                 </div>
-            </a>
+            </Link>
             <nav className="header__nav" aria-label="Main navigation">
                 <ul className="header__nav-list">
                     {navLinks.map((link) => (
                         <li key={link.name}>
-                            <a href={link.href} className="header__nav-link">{link.name}</a>
+                            <Link to={link.href} className="header__nav-link">{link.name}</Link>
                         </li>
                     ))}
                 </ul>
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
                    <ul className="header__nav-list">
                        {navLinks.map((link) => (
                            <li key={link.name}>
-                               <a href={link.href} className="header__nav-link" onClick={() => setIsMenuOpen(false)}>{link.name}</a>
+                               <Link to={link.href} className="header__nav-link" onClick={() => setIsMenuOpen(false)}>{link.name}</Link>
                            </li>
                        ))}
                    </ul>

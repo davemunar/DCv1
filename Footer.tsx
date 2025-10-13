@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
@@ -9,8 +10,8 @@ const Footer: React.FC = () => {
                 <div className="footer__column">
                     <h4 className="footer__heading">Información</h4>
                     <ul className="footer__links">
-                        <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="/politicas">Políticas de Entrega</a></li>
+                        <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
+                        <li><Link to="/politicas">Políticas de Entrega</Link></li>
                     </ul>
                 </div>
                 <div className="footer__column">
