@@ -5,10 +5,11 @@ interface ProductCardProps {
     name: string;
     description: string;
     imageUrl: string;
+    icon: React.ReactNode;
     slug: string; // Campo obligatorio para la URL
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, description, imageUrl, slug }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ name, description, imageUrl, icon, slug }) => {
     return (
         // Usamos Link para navegar a la ruta /product/slug
         <Link to={`/product/${slug}`} className="product-card block group">
@@ -19,8 +20,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, description, imageUrl, 
                     className="product-card__image w-full h-48 object-cover transition duration-300 group-hover:scale-105" 
                 />
                 <div className="product-card__info p-4">
-                    <h3 className="product-card__name text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
-                        {name}
+                    <h3 className="product-card__name">
+                        {icon}
+                        <span>{name}</span>
                     </h3>
                     <p className="product-card__description text-gray-600">
                         {description}

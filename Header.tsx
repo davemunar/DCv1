@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGift, FaShoppingBasket, FaRegistered } from 'react-icons/fa';
 
 import logoSrc from './src/assets/imagenes/DCiso.png';
 
@@ -11,10 +12,10 @@ const Header: React.FC = () => {
     };
 
     const navLinks = [
-        { name: 'Kits', href: '/product/kits-empresariales' },
-        { name: 'Anchetas', href: '/product/anchetas-gourmet' },
-        { name: 'Personalizados', href: '/product/productos-personalizados' },
-        { name: 'Contacto', href: '/contact' },
+        { name: 'Kits', href: '/product/kits-empresariales', icon: <FaGift /> },
+        { name: 'Anchetas', href: '/product/anchetas-gourmet', icon: <FaShoppingBasket /> },
+        { name: 'Personalizados', href: '/product/productos-personalizados', icon: <FaRegistered /> },
+        { name: 'Contacto', href: '/contact', icon: null },
     ];
 
     return (
@@ -30,7 +31,10 @@ const Header: React.FC = () => {
                 <ul className="header__nav-list">
                     {navLinks.map((link) => (
                         <li key={link.name}>
-                            <Link to={link.href} className="header__nav-link">{link.name}</Link>
+                            <Link to={link.href} className="header__nav-link">
+                                {link.icon}
+                                <span>{link.name}</span>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -43,7 +47,10 @@ const Header: React.FC = () => {
                    <ul className="header__nav-list">
                        {navLinks.map((link) => (
                            <li key={link.name}>
-                               <Link to={link.href} className="header__nav-link" onClick={() => setIsMenuOpen(false)}>{link.name}</Link>
+                               <Link to={link.href} className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                   {link.icon}
+                                   <span>{link.name}</span>
+                                </Link>
                            </li>
                        ))}
                    </ul>

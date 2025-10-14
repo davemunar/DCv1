@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import Hero from './Hero';
 import Testimonials from './Testimonials';
+import { FaGift, FaShoppingBasket, FaRegistered } from 'react-icons/fa';
 import kitsImage from './src/assets/imagenes/imgProductos/imgKitsPortada1.png';
 import anchetasImage from './src/assets/imagenes/imgProductos/imgAnchetasPortada1.png';
 import personalizadosImage from './src/assets/imagenes/imgProductos/imgPersonalizadosPortada1.png';
@@ -14,6 +15,7 @@ function Home() {
         {
             name: 'Kits Empresariales',
             description: 'Elige por por precio, intereses o temáticas.',
+            icon: <FaGift />,
             imageUrl: kitsImage,
             slug: 'kits-empresariales' // Añadido
         },
@@ -21,6 +23,7 @@ function Home() {
         {
             name: 'Anchetas Gourmet',
             description: 'Una selección de productos premium para el paladar más exigente.',
+            icon: <FaShoppingBasket />,
             imageUrl: anchetasImage,
             slug: 'anchetas-gourmet' // Añadido
         },
@@ -28,6 +31,7 @@ function Home() {
         {
             name: 'Productos personalizados',
             description: 'Gadgets de última generación para sorprender a tus clientes.',
+            icon: <FaRegistered />,
             imageUrl: personalizadosImage,
             slug: 'productos-personalizados' // Añadido
         }
