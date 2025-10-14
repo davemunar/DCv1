@@ -22,7 +22,7 @@ function Home() {
 
         {
             name: 'Anchetas Gourmet',
-            description: 'Una selección de productos premium para el paladar más exigente.',
+            description: 'Una selección de productos premium para paladares exigentes.',
             icon: <FaShoppingBasket />,
             imageUrl: anchetasImage,
             slug: 'anchetas-gourmet' // Añadido
@@ -30,7 +30,7 @@ function Home() {
 
         {
             name: 'Productos personalizados',
-            description: 'Gadgets de última generación para sorprender a tus clientes.',
+            description: 'Productos creativos y modernos para sorprender a tus clientes VIP.',
             icon: <FaRegistered />,
             imageUrl: personalizadosImage,
             slug: 'productos-personalizados' // Añadido
@@ -58,9 +58,9 @@ function Home() {
                         <img src={bannerImage} alt="Regalos corporativos personalizados" className="promotional-section__image w-full h-auto rounded-lg shadow-md" />
                     </div>
                     <div className="promotional-section__content md:w-1/2 p-4">
-                        <h2 className="promotional-section__title text-3xl font-semibold mb-4 text-gray-800">Déjalos elegir y haz que tu regalo sea el detalle corporativo perfecto:</h2>
+                        <h2 className="promotional-section__title text-3xl font-semibold mb-4 text-gray-800">Déjalos elegir. Haz que tu regalo sea el detalle corporativo perfecto.</h2>
                         <p className="promotional-section__body text-gray-600 mb-6">
-                            Envía en e-mail con una colección personalizada <strong>(por presupuesto, tema o interés)</strong> y deja que el receptor elija su detalle favorito entre tus opciones. Solo necesitas su correo electrónico para gestionar la entrega y garantizar <strong>detalles que realmente se aprecian</strong>.
+                            Envía un e-mail con una colección personalizada <strong>(por presupuesto, tema o interés)</strong> y deja que el <strong>receptor elija</strong> su detalle favorito entre tus opciones. Solo necesitas su correo electrónico para gestionar la entrega y garantizar <strong>detalles que realmente se aprecian</strong>.
                         </p>
                         <div className="promotional-section__cta-container">
                             <a href="/contact" className="cta-button cta-button--secondary bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Descubre Cómo</a>
@@ -70,6 +70,7 @@ function Home() {
             </section>
 
             <Testimonials />
+            {/* <Testimonials /> */}
         </div>
     );
 }

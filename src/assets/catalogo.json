@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ancheta Gourmet Premium",
+    "precio": 250000,
+    "categoria": "Gourmet",
+    "empresaObjetivo": ["Empresas de tecnología", "Consultorías", "Entidades financieras"],
+    "descripcion": "Incluye vinos, quesos, aceitunas y mix de madurados. Ideal para clientes premium.",
+    "imagen": "/imagenes/ancheta1.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Kit Corporativo Navideño",
+    "precio": 120000,
+    "categoria": "Navidad",
+    "empresaObjetivo": ["Educación", "Gobierno", "Logística"],
+    "descripcion": "Caja decorada con productos colombianos para fin de año.",
+    "imagen": "/imagenes/kitnavidad.png"
+  }
+]
