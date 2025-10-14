@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton: React.FC = () => {
     // Reemplaza este número con tu número de WhatsApp
-    const whatsappUrl = "https://wa.me/573186060606?text=Hola!%20Quisiera%20más%20información.";
+    const whatsappUrl = "https://wa.me/573208713744?text=Hola!%20Quisiera%20más%20información.";
 
     return (
         <a
