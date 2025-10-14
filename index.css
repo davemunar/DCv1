@@ -708,6 +708,13 @@ main {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.footer__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
 .footer__links {
   list-style: none;
 }

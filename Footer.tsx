@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
@@ -24,15 +25,24 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="footer__column">
                     <h4 className="footer__heading">Contacto</h4>
-                    <p>Teléfono: +57 318 6060606</p>
-                    <p>Correo: info@detallescorporativos.com</p>
-                    <p>Dirección: Bogotá, Colombia</p>
+                    <div className="footer__contact-item">
+                        <FaPhone />
+                        <span>+57 320 8713744</span>
+                    </div>
+                    <div className="footer__contact-item">
+                        <FaEnvelope />
+                        <span>ventas@detallescorporativos.com</span>
+                    </div>
+                    <div className="footer__contact-item">
+                        <FaMapMarkerAlt />
+                        <span>Gobernación de Cundinamarca, Cl. 26 #51-53, Bogotá</span>
+                    </div>
                 </div>
             </div>
             <div className="footer__bottom-bar">
                 <div className="max-w-6xl mx-auto">
                     <div className="footer__copyright">
-                        <p>&copy; {currentYear} Detalles Corporativos. Todos los derechos reservados.</p>
+                        <p>Detalles Corporativos &copy; {currentYear} . Todos los derechos reservados.</p>
                         <p>Una marca de Asocia Tech SAS</p>
                     </div>
                 </div>
