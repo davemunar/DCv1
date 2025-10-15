@@ -6,6 +6,6 @@ import sitemap from 'vite-plugin-sitemap'
 export default defineConfig({
   plugins: [
     react(),
-    sitemap({ hostname: 'https://www.detallescorporativos.com' }), // Reemplaza con tu dominio
+    sitemap({ hostname: 'https://detallescorporativos.com' }), // Usamos la versión sin www
   ],
 })

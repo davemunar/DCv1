@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.detallescorporativos.com/sitemap.xml
+Sitemap: https://detallescorporativos.com/sitemap.xml
