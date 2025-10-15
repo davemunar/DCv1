@@ -28,7 +28,7 @@ const testimonials = [
     {
         id: 5,
         name: 'Isabella Rojas  ',
-        role: '  Especialista en Clima Organizacional, FUNDACION SOCIAL UNIDOS PARA EL BIENESTAR',
+        role: 'Gestión de Personal, Fundación Unidos',
         message: 'Poder ofrecer una selección curada de regalos y que cada persona elija su favorito ha tenido un impacto muy positivo en la moral del equipo. Todo chevere y a tiempo',
     },
     
