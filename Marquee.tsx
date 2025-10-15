@@ -1,17 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface MarqueeProps {
   className?: string;
 }
 
 const Marquee: React.FC<MarqueeProps> = ({ className = '' }) => {
-    // Si no tienes contenido aún, simplemente devuelve un fragmento vacío o null.
-    // Esto asegura que el componente se renderice correctamente sin romper la aplicación.
     return (
-        <div className={`marquee-section ${className}`}>
+        <Link to="/products" className={`marquee-section ${className}`}>
             {/* Mensaje temporal de Marquee */}
-            🎄<strong>Adelántate</strong> a diciembre y obtén <strong>20% OFF</strong> 🎁
-        </div>
+            🎄<strong>Adelántate</strong> a diciembre y obtén <span className="marquee-section__offer"><u><strong>20% OFF</strong></u></span> 🎁
+        </Link>
     );
 };
 

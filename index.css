@@ -2,6 +2,7 @@
 :root {
   --primary-color: #0A2540;
   --accent-color: #FFC300; /* A more vibrant yellow for better contrast */
+  --royal-blue: #4169E1; /* Azul Rey para efectos hover */
   --text-light: #f5f5f5;
   --text-dark: #333333;
   --background-light: #ffffff;
@@ -161,6 +162,8 @@ main {
     padding: 0.5rem 5%; /* Reducimos el padding vertical para hacerlo menos alto */
     font-size: 0.85rem; /* Reducimos el tamaño de la fuente */
     white-space: nowrap; /* Evitamos el salto de línea */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
 
 .marquee-section__container {
@@ -195,6 +198,15 @@ main {
     }
     .marquee-section__item {
         flex-basis: auto; /* En escritorio, el ancho es automático */
+    }
+
+    .marquee-section:hover {
+        background-color: var(--royal-blue);
+        color: var(--text-light);
+    }
+
+    .marquee-section:hover .marquee-section__offer {
+        text-decoration: underline;
     }
 }
 
@@ -232,25 +244,29 @@ main {
 
 /* WhatsApp Floating Button */
 .whatsapp-button {
-  position: fixed;
-  bottom: 25px;
-  right: 25px; /* Necesario para anclar la notificación */
-  background-color: #25D366; /* WhatsApp Green */
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem; /* Icon size */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-decoration: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
 }
 
-.whatsapp-button:hover {
+.whatsapp-button__icon-link {
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem; /* Icon size */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    position: relative; /* Para que la notificación se posicione correctamente */
+}
+
+.whatsapp-button__icon-link:hover {
   transform: scale(1.1);
 }
 
@@ -263,6 +279,7 @@ main {
     background-color: #E6F0FF; /* Azul claro, como un mensaje recibido */
     padding: 0.5rem 1rem; /* Reducimos el padding vertical */
     border-radius: 12px 12px 0 12px; /* Esquinas redondeadas como burbuja de chat */
+    text-decoration: none; /* Quitamos el subrayado del enlace */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: var(--text-dark);
@@ -289,9 +306,16 @@ main {
 }
 
 /* Clase que se añade para mostrar el popup */
-.whatsapp-button.show-popup .whatsapp-popup {
+.whatsapp-button.show-popup .whatsapp-popup,
+.whatsapp-button:hover .whatsapp-popup {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto; /* Hacemos el popup clickeable cuando es visible */
+}
+
+/* Efecto hover para el popup */
+.whatsapp-popup:hover {
+    transform: translateY(-2px); /* Ligero efecto al pasar el mouse sobre el popup */
 }
 
 /* Home Page */

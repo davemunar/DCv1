@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -16,6 +16,16 @@ import ProductDetails from './ProductDetails';
 const Contact = () => <div className="py-8"><h1 className="text-3xl font-bold">Página de Contacto</h1><p>Información de contacto aquí.</p></div>;
 const About = () => <div className="py-8"><h1 className="text-3xl font-bold">Sobre Nosotros</h1><p>Información sobre la empresa aquí.</p></div>;
 const Policies = () => <div className="py-8"><h1 className="text-3xl font-bold">Políticas</h1><p>Políticas de entregas y devoluciones aquí.</p></div>;
+
+
+const ConditionalCta: React.FC = () => {
+  const location = useLocation();
+  // Mostrar el CTA solo en la página de inicio ("/")
+  if (location.pathname !== '/') {
+    return null;
+  }
+  return <Cta />;
+};
 
 
 const App: React.FC = () => {
@@ -80,7 +90,7 @@ const App: React.FC = () => {
           <Route path="/politicas" element={<Policies />} />
         </Routes>
       </main>
-      <Cta /> {/* Añadimos la sección de CTA aquí */}
+      <ConditionalCta /> {/* El CTA ahora se muestra condicionalmente */}
       <div ref={footerRef}>
         <Pillars /> {/* Añadimos la sección de pilares aquí */}
         <Footer />
