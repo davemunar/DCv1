@@ -254,23 +254,44 @@ main {
   transform: scale(1.1);
 }
 
-.whatsapp-notification {
+.whatsapp-popup {
     position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #FF3B30; /* Rojo brillante */
-    color: white;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    font-weight: bold;
-    border: 2px solid white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    animation: pulse 1.5s infinite;
+    bottom: 75px; /* Altura del botón (60px) + 15px de margen */
+    right: 0;
+    width: max-content; /* El ancho se ajusta al contenido */
+    max-width: 280px; /* Ancho máximo para que no sea gigante en desktop */
+    background-color: #E6F0FF; /* Azul claro, como un mensaje recibido */
+    padding: 0.5rem 1rem; /* Reducimos el padding vertical */
+    border-radius: 12px 12px 0 12px; /* Esquinas redondeadas como burbuja de chat */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 0.9rem; /* Tamaño de fuente similar a un chat */
+    
+    /* Oculto por defecto y con animación */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none; /* Para que no interfiera con el clic */
+}
+
+/* La "cola" de la burbuja de chat */
+.whatsapp-popup::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 0 20px;
+    border-color: transparent transparent transparent #E6F0FF;
+}
+
+/* Clase que se añade para mostrar el popup */
+.whatsapp-button.show-popup .whatsapp-popup {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Home Page */
@@ -875,4 +896,23 @@ main {
         justify-content: center; /* Centra los elementos en escritorio */
         gap: 1.5rem;
     }
+}
+
+.whatsapp-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #FF3B30; /* Rojo brillante */
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
 }

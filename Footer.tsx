@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="footer__contact-item">
                         <FaMapMarkerAlt />
-                        <span>Gobernación de Cundinamarca, Cl. 26 #51-53,<br />Bogotá, Colombia.</span>
+                        <span>Gobernación de Cundinamarca,<br></br> Cl. 26 #51-53,<br />Bogotá, Colombia.</span>
                     
                     </div>
                 </div>

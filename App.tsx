@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Header';
@@ -19,8 +19,10 @@ const Policies = () => <div className="py-8"><h1 className="text-3xl font-bold">
 
 
 const App: React.FC = () => {
+  const footerRef = useRef<HTMLDivElement>(null);
   const [isMarqueeVisible, setMarqueeVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isFooterVisible, setFooterVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +40,23 @@ const App: React.FC = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFooterVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1, // Se activa cuando al menos el 10% del footer es visible
+      }
+    );
+
+    if (footerRef.current) observer.observe(footerRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Router>
@@ -62,9 +81,11 @@ const App: React.FC = () => {
         </Routes>
       </main>
       <Cta /> {/* Añadimos la sección de CTA aquí */}
-      <Pillars /> {/* Añadimos la sección de pilares aquí */}
-      <Footer />
-      <WhatsAppButton /> {/* Añadimos el botón flotante de WhatsApp */}
+      <div ref={footerRef}>
+        <Pillars /> {/* Añadimos la sección de pilares aquí */}
+        <Footer />
+      </div>
+      <WhatsAppButton isFooterVisible={isFooterVisible} /> {/* Añadimos el botón flotante de WhatsApp */}
     </Router>
   );
 };

@@ -81,19 +81,21 @@ const Testimonials: React.FC = () => {
             <h2 className="testimonials-carousel__title">Lo que dicen nuestros clientes</h2>
             <div className="testimonials-carousel__slides-container" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {testimonials.map((testimonial) => (
-                    <div key={testimonial.id} className="testimonials-carousel__slide" onClick={() => setUserInteracted(true)}>
-                        <p className="testimonial-card__message">"{testimonial.message}"</p>
-                        <div className="testimonial-card__author">
+                    <figure key={testimonial.id} className="testimonials-carousel__slide" onClick={() => setUserInteracted(true)}>
+                        <blockquote className="testimonial-card__message">
+                            <p>"{testimonial.message}"</p>
+                        </blockquote>
+                        <figcaption className="testimonial-card__author">
                             <div className="testimonial-card__initials-icon" aria-hidden="true">
                                 {getInitials(testimonial.name)}
                             </div>
                             <div className="testimonial-card__author-details">
-                                <span className="testimonial-card__name">{testimonial.name}</span>
+                                <cite className="testimonial-card__name not-italic">{testimonial.name}</cite>
                                 <span className="mx-2 text-gray-400" aria-hidden="true">|</span>
                                 <span className="testimonial-card__role">{testimonial.role}</span>
                             </div>
-                        </div>
-                    </div>
+                        </figcaption>
+                    </figure>
                 ))}
             </div>
             <div className="testimonials-carousel__controls">
