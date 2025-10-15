@@ -72,14 +72,15 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Marquee className={isMarqueeVisible ? '' : 'marquee-section--hidden'} />
-      {/* Añadí una clase min-h-screen para asegurar que el footer esté abajo */}
-      <main className="container mx-auto p-4 min-h-screen"> 
+      <main className="min-h-screen">
         <Routes>
           {/* Ruta principal (Inicio) */}
           <Route path="/" element={<Home />} />
           
           {/* Ruta para el catálogo completo de productos */}
-          <Route path="/products" element={<ProductCatalog />} />
+          <Route path="/products" element={<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                              <ProductCatalog />
+                                            </div>} />
           
           {/* Ruta para ver los detalles de un producto específico */}
           <Route path="/product/:slug" element={<ProductDetails />} />

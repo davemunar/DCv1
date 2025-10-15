@@ -940,3 +940,22 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     animation: pulse 1.5s infinite;
 }
+
+/* Estilos para tarjetas de producto */
+.product-price-original {
+  color: #9ca3af; /* text-gray-400 */
+  text-decoration-line: line-through; /* line-through */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem;
+}
+
+.product-price-discounted {
+  color: #16a34a; /* text-green-600 */
+  font-weight: 700; /* font-bold */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem;
+}
+
+.product-card .group-hover\:text-blue-600:hover {
+  color: var(--royal-blue);
+}
