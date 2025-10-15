@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { productos } from './src/assets/productos'; // Importamos el array de productos
-import ProductCard from './ProductCard'; // Usamos la tarjeta de catálogo con el diseño correcto
+import ProductCardCatalog from './ProductCardCatalog'; // Usamos la tarjeta de catálogo con el diseño correcto
 
 const ProductCatalog = () => {
   const [categoriaFiltro, setCategoriaFiltro] = useState<string[]>([]);
@@ -49,6 +49,19 @@ const ProductCatalog = () => {
       interesesSeleccionados.length === 0 || interesesSeleccionados.includes(subcategoriaProducto);
     return matchCategoria && matchRango && matchInteres;
   });
+
+  const getCategoryDescription = (categoria: string): string => {
+    switch (categoria) {
+      case 'Kits':
+        return 'Elige por precio, intereses o temáticas.';
+      case 'Anchetas':
+        return 'Una selección de productos premium para paladares exigentes.';
+      case 'Personalizados':
+        return 'Productos creativos y modernos para sorprender a tus clientes VIP.';
+      default:
+        return 'Regalos corporativos únicos y memorables.';
+    }
+  };
 
   return (
     <section className="p-4 bg-gray-50 min-h-screen">
@@ -116,12 +129,7 @@ const ProductCatalog = () => {
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {productosFiltrados.map((p) => (
-            <ProductCard 
-              key={p.id}
-              id={p.id}
-              nombre={p.nombre}
-              descripcion={`${p.categoria} - ${p.rango}`}
-              imagen={p.imagen} />
+            <ProductCardCatalog key={p.id} producto={{...p, descripcion: getCategoryDescription(p.categoria)}}/>
           ))}
         </div>
       )}
