@@ -11,7 +11,7 @@ const testimonials = [
         id: 2,
         name: 'Carlos M.',
         role: '  Jefe de Personal, Monnette S.A.S.',
-        message: 'Buscábamos una forma de reconocer a nuestro equipo que fuera más allá de lo tradicional. Detalles Corporativos nos dio la flexibilidad que necesitábamos.',
+        message: 'Buscábamos una forma de reconocer a nuestro equipo que fuera más allá de lo tradicional. RegalaPro nos dio la flexibilidad que necesitábamos.',
     },
     {
         id: 3,

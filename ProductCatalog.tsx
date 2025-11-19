@@ -127,7 +127,7 @@ const ProductCatalog = () => {
       {productosFiltrados.length === 0 ? (
         <p className="text-center text-gray-500">No hay productos que coincidan.</p>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {productosFiltrados.map((p) => (
             <ProductCardCatalog key={p.id} producto={{...p, descripcion: getCategoryDescription(p.categoria)}}/>
           ))}
