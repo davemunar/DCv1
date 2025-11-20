@@ -13,9 +13,9 @@ const Header: React.FC<HeaderProps> = ({ quoteItemCount, onQuoteClick }) => {
     };
 
     const navLinks = [
+      { name: 'Promocionales', href: '/products', state: { kitType: 'Promocionales' }, icon: <FaRegistered style={{ color: 'inherit' }} /> },
       { name: 'Kits', href: '/products', state: { kitType: 'Kits Empresariales' }, icon: <FaGift style={{ color: 'inherit' }}/> },
       { name: 'Anchetas', href: '/products', state: { kitType: 'Anchetas' }, icon: <FaShoppingBasket style={{ color: 'inherit' }} /> },
-      { name: 'Personalizados', href: '/products', state: { kitType: 'Promocionales' }, icon: <FaRegistered style={{ color: 'inherit' }} /> },
       { name: 'Contacto', href: '#page-footer', icon: null },
     ];
 

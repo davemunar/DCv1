@@ -17,6 +17,13 @@ const Home: React.FC<HomeProps> = ({ onProductClick }) => {
 
     const featuredProducts = [
         {
+            name: 'Productos promocionales',
+            description: 'Productos creativos y modernos para sorprender a tus clientes VIP.',
+            icon: <FaRegistered />,
+            imageUrl: personalizadosImage,
+            id: 'featured-3', price: 0, imageUrls: [personalizadosImage], category: 'Promocional', priceCategory: 'Esencial', kitType: 'Promocionales', experience: 'Promoción de Tú Logo / Marca'
+        },
+        {
             name: 'Kits Empresariales',
             description: 'Elige por por precio, intereses o temáticas.',
             icon: <FaGift />,
@@ -31,14 +38,6 @@ const Home: React.FC<HomeProps> = ({ onProductClick }) => {
             icon: <FaShoppingBasket />,
             imageUrl: anchetasImage,
             id: 'featured-2', price: 0, imageUrls: [anchetasImage], category: 'Anchetas', priceCategory: 'VIP Pro', kitType: 'Anchetas', experience: 'Navidad y fin de año'
-        },
-
-        {
-            name: 'Productos personalizados',
-            description: 'Productos creativos y modernos para sorprender a tus clientes VIP.',
-            icon: <FaRegistered />,
-            imageUrl: personalizadosImage,
-            id: 'featured-3', price: 0, imageUrls: [personalizadosImage], category: 'Promocional', priceCategory: 'Esencial', kitType: 'Promocionales', experience: 'Promoción de Tú Logo / Marca'
         }
     ];
 
@@ -67,7 +66,7 @@ const Home: React.FC<HomeProps> = ({ onProductClick }) => {
             <section className="promotional-section bg-gray-50 py-12 mt-12">
                 <div className="promotional-section__container flex flex-col md:flex-row items-center max-w-6xl mx-auto p-4">
                     <div className="promotional-section__image-container md:w-1/2 p-4">
-                        <img src={bannerImage} alt="Regalos para empresas personalizados" className="promotional-section__image w-full h-auto rounded-lg shadow-md" />
+                        <img src={bannerImage} alt="Regalos para empresas promocionales" className="promotional-section__image w-full h-auto rounded-lg shadow-md" />
                     </div>
                     <div className="promotional-section__content md:w-1/2 p-4">
                         <h3 className="promotional-section__title text-3xl font-semibold mb-4 text-gray-800">Déjalos elegir. Haz que tu regalo sea el detalle perfecto para tu empresa.</h3>

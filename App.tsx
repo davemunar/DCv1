@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -54,6 +55,7 @@ const AppContent: React.FC = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Header quoteItemCount={quoteItemCount} onQuoteClick={() => {}} />
       <Marquee className="" />
       <main className="min-h-screen">

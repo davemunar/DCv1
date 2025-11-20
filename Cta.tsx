@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cta: React.FC = () => {
     return (
         <section className="cta-section">
             <div className="cta-section__container max-w-6xl mx-auto">
-                <a href="/contact" className="cta-section__button">
+                <Link to="/products" className="cta-section__button">
                     $ Cotizar
-                </a>
+                </Link>
                 <p className="cta-section__text">¡es muy fácil!</p>
             </div>
         </section>
