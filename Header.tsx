@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaGift, FaShoppingBasket, FaRegistered } from 'react-icons/fa';
-
-import logoSrc from './src/assets/imagenes/DCiso.png';
-
-const Header: React.FC = () => {
+import { FaGift, FaShoppingBasket, FaRegistered, FaShoppingCart } from 'react-icons/fa';
+interface HeaderProps {
+  quoteItemCount: number;
+  onQuoteClick: () => void;
+}
+const Header: React.FC<HeaderProps> = ({ quoteItemCount, onQuoteClick }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -12,33 +13,52 @@ const Header: React.FC = () => {
     };
 
     const navLinks = [
-        { name: 'Kits', href: '/product/kits-empresariales', icon: <FaGift /> },
-        { name: 'Anchetas', href: '/product/anchetas-gourmet', icon: <FaShoppingBasket /> },
-        { name: 'Personalizados', href: '/product/productos-personalizados', icon: <FaRegistered /> },
-        { name: 'Contacto', href: '/contact', icon: null },
+      { name: 'Kits', href: '/products', state: { kitType: 'Kits Empresariales' }, icon: <FaGift style={{ color: 'inherit' }}/> },
+      { name: 'Anchetas', href: '/products', state: { kitType: 'Anchetas' }, icon: <FaShoppingBasket style={{ color: 'inherit' }} /> },
+      { name: 'Personalizados', href: '/products', state: { kitType: 'Promocionales' }, icon: <FaRegistered style={{ color: 'inherit' }} /> },
+      { name: 'Contacto', href: '#page-footer', icon: null },
     ];
 
     return (
-        <header className="header">
+        <header className="header" style={{ height: '70px' }}>
             <Link to="/" className="header__logo-link">
-                <img src={logoSrc} alt="Detalles Corporativos Logo" className="header__logo" />
+                {/* <img src={logoSrc} alt="RegalaPro Logo" className="header__logo" /> */}
                 <div className="header__logotext">
-                    <span className="header__logotext--details">Detalles</span>
-                    <span className="header__logotext--corp">Corporativos</span>
+                    <span className="header__logotext--details">
+                        <span style={{ color: 'white' }}>Regala</span>Pro
+                    </span>
                 </div>
             </Link>
             <nav className="header__nav" aria-label="Main navigation">
                 <ul className="header__nav-list">
                     {navLinks.map((link) => (
                         <li key={link.name}>
-                            <Link to={link.href} className="header__nav-link">
-                                {link.icon}
-                                <span>{link.name}</span>
-                            </Link>
+                            {link.name === 'Contacto' ? (
+                                <a href={link.href} className="header__nav-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <span>{link.name}</span>
+                                </a>
+                            ) : (
+                                <Link to={link.href} state={link.state} className="header__nav-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    {link.icon}
+                                    <span>{link.name}</span>
+                                </Link>
+                            )}
                         </li>
                     ))}
                 </ul>
             </nav>
+            <Link
+              to="/products"
+              className="cta-button relative flex items-center gap-3 py-1 px-2.5 text-xs"
+            >
+              <span>Mi Cotización</span>
+              <FaShoppingCart style={{ fontSize: '1.1em' }} />
+              {quoteItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {quoteItemCount}
+                </span>
+              )}
+            </Link>
             <button className="header__menu-icon" onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={isMenuOpen}>
                 &#9776; {/* Hamburger Icon */}
             </button>
@@ -46,12 +66,17 @@ const Header: React.FC = () => {
                 <nav aria-label="Mobile navigation">
                    <ul className="header__nav-list">
                        {navLinks.map((link) => (
-                           <li key={link.name}>
-                               <Link to={link.href} className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
-                                   {link.icon}
-                                   <span>{link.name}</span>
-                                </Link>
-                           </li>
+                            <li key={link.name}>
+                                {link.name === 'Contacto' ? (
+                                    <a href={link.href} className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                        <span>{link.name}</span>
+                                    </a>
+                                ) : (
+                                    <Link to={link.href} state={link.state} className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                        {link.icon} <span>{link.name}</span>
+                                    </Link>
+                                )}
+                            </li>
                        ))}
                    </ul>
                 </nav>

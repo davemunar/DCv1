@@ -2,6 +2,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.detallescorporativos.com/sitemap.xml
+Sitemap: https://www.regalapro.com/sitemap.xml
 
     

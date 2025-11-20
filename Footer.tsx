@@ -6,22 +6,22 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer">
+        <footer id="page-footer" className="footer">
             <div className="footer__main-content max-w-6xl mx-auto">
                 <div className="footer__column">
                     <h2 className="footer__heading">Catálogo 2025</h2>
                     <ul className="footer__links footer__links--icons">
                         <li className="footer__link-item">
                             <FaGift />
-                            <Link to="/product/kits-empresariales">Kits Empresariales</Link>
+                            <Link to="/products" state={{ kitType: 'Kits Empresariales' }}>Kits Empresariales</Link>
                         </li>
                         <li className="footer__link-item">
                             <FaShoppingBasket />
-                            <Link to="/product/anchetas-gourmet">Anchetas Gourmet</Link>
+                            <Link to="/products" state={{ kitType: 'Anchetas' }}>Anchetas Gourmet</Link>
                         </li>
                         <li className="footer__link-item">
                             <FaRegistered />
-                            <Link to="/product/productos-personalizados">Productos Personalizados</Link>
+                            <Link to="/products" state={{ kitType: 'Promocionales' }}>Productos Personalizados</Link>
                         </li>
                     </ul>
                 </div>
@@ -40,19 +40,18 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="footer__contact-item">
                         <FaEnvelope />
-                        <a href="mailto:ventas@detallescorporativos.com" className="footer__contact-link">ventas@detallescorporativos.com</a>
+                        <a href="mailto:ventas@regalapro.com" className="footer__contact-link">ventas@regalapro.com</a>
                     </div>
                     <div className="footer__contact-item">
                         <FaMapMarkerAlt />
                         <span>Gobernación de Cundinamarca,<br></br> Cl. 26 #51-53, local 103.<br />Bogotá, Colombia.</span>
-                    
                     </div>
                 </div>
             </div>
             <div className="footer__bottom-bar">
                 <div className="max-w-6xl mx-auto">
                     <div className="footer__copyright">
-                        <p>Detalles Corporativos &copy; {currentYear} . Todos los derechos reservados.</p>
+                        <p>RegalaPro.com &copy; {currentYear} . Todos los derechos reservados.</p>
                         <p>Una marca de Asocia Tech SAS</p>
                     </div>
                 </div>

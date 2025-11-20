@@ -210,17 +210,15 @@ main {
     }
 }
 
-/* CTA Section */
 .cta-section {
-    background-color: var(--background-light);
-    padding: 1.5rem 5%;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    padding: 2rem 5%;
+    background-color: var(--background-soft);
+    text-align: center; /* Centra el texto por defecto */
 }
 
 .cta-section__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Apilado en móvil */
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -475,14 +473,59 @@ main {
   color: var(--primary-color);
 }
 
-.featured-products__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+/* Product Card */
+.feature-card {
+  padding: 0; /* Eliminamos el padding para que la imagen ocupe todo el espacio */
+  padding-bottom: 1.5rem; /* Añadimos padding solo en la parte inferior para el texto */
+  background-color: var(--background-light);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
+.feature-card__image {
+  width: 100%;
+  height: 250px; /* Altura fija para consistencia */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+  border-top-left-radius: 8px; /* Redondea las esquinas superiores */
+  border-top-right-radius: 8px;
+  margin-bottom: 1.5rem; /* Espacio entre la imagen y el título */
+}
 
-/* Product Card */
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card__icon {
+  color: var(--primary-color);
+}
+
+.feature-card__name {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+.feature-card__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.featured-products__grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna por defecto para móviles */
+  gap: 2rem;
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra la grilla en la página */
+  padding: 0 1rem; /* Añade un poco de espacio en los laterales */
+}
+
+@media (min-width: 768px) {
+  .featured-products__grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas para tablets y escritorio */
+  }
+}
 .product-card {
     border: 1px solid var(--accent-color); /* Highlighted by default for mobile */
     border-radius: 8px;
@@ -499,10 +542,10 @@ main {
 }
 
 .product-card__image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background-color: #eee;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background-color: #eee;
 }
 
 .product-card__info {
@@ -540,15 +583,16 @@ main {
 }
 
 .promotional-section__image-container {
-    display: flex; /* Make it a flex container */
-    align-items: center; /* Center image vertically */
-    justify-content: center; /* Center image horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Evita que la imagen se desborde */
 }
 
 .promotional-section__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ensure the whole image is visible and proportional */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que toda la imagen sea visible */
 }
 
 .promotional-section__content {
@@ -838,9 +882,6 @@ main {
   .hero__title {
     font-size: 3.5rem;
   }
-  .featured-products__grid {
-      grid-template-columns: repeat(2, 1fr);
-  }
 
   /* Reset product card to normal state for tablet and up */
   .product-card {
@@ -858,10 +899,6 @@ main {
 
 /* Responsive Laptop/Desktop */
 @media (min-width: 1024px) {
-    .featured-products__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .promotional-section__container {
         flex-direction: row;
     }
@@ -956,6 +993,31 @@ main {
   line-height: 1.25rem;
 }
 
+/* === Catálogo de Productos - Grilla Estilo E-commerce (Control Preciso) === */
+.catalog-grid-container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar la grilla en la página */
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna por defecto (móvil) */
+    gap: 24px;
+}
+
+@media (min-width: 768px) { /* Tablets (md) y superior */
+    /* La regla para 2 columnas en tablet se elimina para evitar conflictos */
+}
+
+@media (min-width: 1248px) { /* Escritorio (lg) - 1200px para las columnas + 2*24px para los gaps */
+    .catalog-grid-container {
+        grid-template-columns: repeat(3, 384px); /* 3 columnas de 384px */
+        justify-content: center; /* Centra la grilla si el viewport es mayor a 1200px */
+    }
+}
+
 .product-card .group-hover\:text-blue-600:hover {
   color: var(--royal-blue);
+}
+
+/* Oculta temporalmente el componente de cotización */
+.cotizacion-section {
+  display: none;
 }
