@@ -1021,3 +1021,26 @@ main {
 .cotizacion-section {
   display: none;
 }
+/* === Estilos Independientes y Aislados para la Grilla de Filtros del Catálogo === */
+.catalog-filters__grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna por defecto para móviles */
+  gap: 1.5rem; /* Espaciado entre filtros en móvil */
+}
+
+.catalog-filters__grid .filter-section__column > div {
+  display: flex;
+  flex-direction: column; /* Asegura que los checkboxes se apilen verticalmente */
+}
+
+@media (min-width: 768px) {
+  .catalog-filters__grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 2rem; /* Espaciado mayor para escritorio */
+  }
+}
+
+/* === Estilos para el Título del Catálogo === */
+.catalog-title {
+  text-align: center;
+}

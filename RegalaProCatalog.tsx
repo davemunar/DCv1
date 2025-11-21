@@ -102,7 +102,7 @@ const priceFilters: { label: string; category: PriceCategory }[] = [
   { label: 'VIP Pro (más de $100k)', category: 'VIP Pro' },
 ];
 const kitTypeFilters: KitType[] = ['Kits Empresariales', 'Anchetas', 'Promocionales'];
-const experienceFilters: Experience[] = ['Navidad y fin de año', 'Agradecimiento y Lealtad', 'Promoción de Tú Logo / Marca', 'Bienvenida / Onboarding'];
+const experienceFilters: Experience[] = ['Navidad y fin de año', 'Agradecimiento y Lealtad', 'Promoción de Tú Logo - Marca', 'Bienvenida - Onboarding'];
 
 
 // --- 3. COMPONENTE PRINCIPAL ---
@@ -165,12 +165,12 @@ const RegalaProCatalog: React.FC<RegalaProCatalogProps> = ({ onProductClick }) =
   return (
     <div className="w-full h-auto relative bg-slate-50 font-sans text-slate-800 rounded-lg overflow-hidden">
       <div className="p-4 md:p-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">🎁 Nuestro Catálogo Corporativo</h2>
+        <h2 className="catalog-title text-3xl font-bold text-gray-800 mb-6">🎁 Nuestro Catálogo Corporativo</h2>
         <div className="bg-white p-4 rounded-lg shadow-sm mb-6 border border-gray-100">
-          <h2 className="text-lg font-bold text-indigo-900 mb-4">Filtrar Regalos Por:</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <h3 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wider">Experiencia</h3>
+          <h2 className="text-lg font-bold text-indigo-900 mb-4">Escoge tus regalos como un Pro:</h2>
+          <div className="catalog-filters__grid">
+            <div className="filter-section__column">
+              <h3 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wider">¿Propósito de tu regalo?</h3>
               <div className="flex flex-col">
                 {experienceFilters.map(exp => (
                   <label key={exp} className={`flex items-center mb-1 text-sm ${exp === 'Bienvenida / Onboarding' && isBienvenidaDisabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}>
@@ -180,8 +180,8 @@ const RegalaProCatalog: React.FC<RegalaProCatalogProps> = ({ onProductClick }) =
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wider">Tipo de Kit</h3>
+            <div className="filter-section__column">
+              <h3 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wider">¿Qué quieres regalar?</h3>
               <div className="flex flex-col">
                 {kitTypeFilters.map(kit => (
                   <label key={kit} className={`flex items-center mb-1 text-sm ${kit === 'Anchetas' && isAnchetasDisabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}>
@@ -191,8 +191,8 @@ const RegalaProCatalog: React.FC<RegalaProCatalogProps> = ({ onProductClick }) =
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wider">Presupuesto</h3>
+            <div className="filter-section__column">
+              <h3 className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wider">Presupuesto por persona</h3>
               <div className="flex flex-col">
                 {priceFilters.map(p => (
                   <label key={p.category} className="flex items-center mb-1 text-sm cursor-pointer">
